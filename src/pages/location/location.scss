@@ -1,0 +1,17 @@
+.location-page {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+ }
+
+ .location-text {
+   font-size: 1.2rem;
+   color: #FF6060;
+ }
+
+ .location-img {
+   width: 1240px;
+   height: 415px;
+   height: auto;
+   object-fit: cover;
+ }

@@ -1,0 +1,16 @@
+.LocationGrid-container {
+   background-color: #f5f5f5; // couleur de fond
+   justify-content: center; // centrer les cartes
+   padding: 20px; // espace autour des cartes
+   padding-top: 40px; // espace au-dessus du conteneur
+   width: 83%;
+   margin: auto;
+   margin-top: 40px; // espace au-dessus du conteneur
+
+   .locationCards-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 80px; // espace entre les cartes
+      justify-content: center; // centrer les cartes
+   }
+  }

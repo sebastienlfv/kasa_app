@@ -1,0 +1,21 @@
+.locationCard-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;   // éléments en bas
+  align-items: flex-start;     // éléments à gauche
+  padding: 20px;
+  background-color: gray;
+  border-radius: 10px;
+  width: 250px;
+  height: 250px;
+  cursor: pointer;
+  
+  
+  .location-text {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    width: 130px;
+  }
+}

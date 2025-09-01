@@ -1,0 +1,35 @@
+.navigation-container {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: auto;
+  padding: 20px 0;
+
+  .logo-kasa {
+    width: 210px;
+    height: 50px;
+    object-fit: contain;
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 40px;
+    padding-left: 0;
+    padding-right: 37px;
+    margin: 0;
+
+    li {
+      a {
+        color: #000;
+        text-decoration: none;
+        font-weight: 500;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
