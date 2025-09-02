@@ -1,17 +1,104 @@
 .location-page {
-   display: flex;
-   flex-direction: column;
-   justify-content: space-between;
- }
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 85%;
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
 
- .location-text {
-   font-size: 1.2rem;
-   color: #FF6060;
- }
+  .location-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
 
- .location-img {
-   width: 1240px;
-   height: 415px;
-   height: auto;
-   object-fit: cover;
- }
+    .location-details {
+      .location-title {
+        font-size: 2.5rem;
+        font-weight: 500;
+        color: #ff6060;
+        margin: 0;
+        padding: 0;
+      }
+
+      .location-city {
+        font-size: 1.2rem;
+        color: #000;
+        margin: 0;
+        padding: 0;
+      }
+
+      .location-tags {
+        margin: 15px 0;
+      }
+    }
+
+    .location-host {
+      display: flex;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+
+      .location-host-info {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+
+        .host-img {
+          width: 70px;
+          height: 70px;
+          border-radius: 50%;
+          object-fit: cover;
+          margin-right: 10px;
+        }
+
+        .host-name {
+          text-align: right;
+          font-weight: 500;
+          color: #ff6060;
+          width: 70px;
+        }
+      }
+
+      .location-stars {
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+
+        img {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+  }
+
+  .location-dropdowns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+
+    .dropdown-container {
+      width: 500px;
+    }
+
+    .dropdown-title {
+      width: 100%;
+      margin: 0;
+      gap: 20px;
+    }
+
+    .dropdown-description {
+      width: 100%;
+    }
+  }
+}
+
+.location-img {
+  width: 100%;
+  height: 415px;
+  border-radius: 25px;
+  object-fit: cover;
+}

@@ -1,3 +1,8 @@
+.dropdown-container {
+  width: 100%;
+  min-height: 48px; // hauteur minimale pour éviter le "saut"
+}
+
 .dropdown-title {
   display: flex;
   width: 70%;
@@ -5,6 +10,46 @@
   justify-content: space-between;
   background-color: #ff6060;
   font-weight: 600;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.dropdown-description {
+  background-color: #f6f6f673;
+  width: 67%;
+  margin: auto;
+  color: #000;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s ease;
+  display: flex;
+  flex-direction: column;
+  opacity: 1; // le texte reste toujours visible
+
+  &.open {
+    max-height: 500px; // assez grand pour le contenu
+    padding: 1rem;
+  }
+
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+  }
+}
+
+.chevron-icon {
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.chevron-icon.open {
+  transform: rotate(180deg);
 }

@@ -5,7 +5,7 @@ const Footer: React.FC = () => {
     <footer className="footer-container">
       <img
         className="logo-kasaWhite"
-        src="./src/assets/logo_white.png"
+        src="../src/assets/logo_white.png"
         alt="Logo"
       />
       <p className="footer-text">© 2023 Kasa. All rights reserved</p>

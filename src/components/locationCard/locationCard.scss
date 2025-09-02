@@ -1,21 +1,36 @@
 .locationCard-container {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;   // éléments en bas
-  align-items: flex-start;     // éléments à gauche
+  justify-content: flex-end; // éléments en bas
+  align-items: flex-start; // éléments à gauche
   padding: 20px;
   background-color: gray;
   border-radius: 10px;
   width: 250px;
   height: 250px;
   cursor: pointer;
-  
-  
+  position: relative; // nécessaire pour le positionnement absolu
+
+  .location-text-bg {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 48px; // hauteur à ajuster selon le texte
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+    border-radius: 0 0 10px 10px;
+    z-index: 1;
+  }
+
   .location-text {
     color: #fff;
     font-size: 16px;
     font-weight: 500;
     margin: 0;
-    width: 130px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    padding-left: 8px;
+    padding-right: 8px;
   }
 }
