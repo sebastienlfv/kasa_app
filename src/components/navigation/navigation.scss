@@ -33,3 +33,22 @@
     }
   }
 }
+
+@media (max-width: 1024px) {
+  .navigation-container {
+    .logo-kasa {
+      width: 130px;
+    }
+
+    .nav-links {
+      gap: 20px;
+      padding-right: 0;
+
+      li {
+        a {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}

@@ -11,7 +11,7 @@ const Accueil: React.FC = () => {
       <Banner
         imageUrl="./src/assets/banner_home.png"
         altText="banner"
-        bannerText="© 2023 Kasa. All rights reserved"
+        bannerText="Chez vous, partout et ailleurs"
       />
       <LocationGridContainer />
       <Footer />

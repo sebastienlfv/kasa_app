@@ -11,10 +11,10 @@ const Nav: React.FC = () => {
       />
       <ul className="nav-links">
         <li>
-          <Link to="/">Accueil</Link>
+          <Link to="/">ACCUEIL</Link>
         </li>
         <li>
-          <Link to="/about">À propos</Link>
+          <Link to="/about">À PROPOS</Link>
         </li>
       </ul>
     </nav>

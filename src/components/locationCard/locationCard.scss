@@ -6,10 +6,11 @@
   padding: 20px;
   background-color: gray;
   border-radius: 10px;
-  width: 250px;
+  width: 340px;
   height: 250px;
   cursor: pointer;
   position: relative; // nécessaire pour le positionnement absolu
+  background-color: orangered;
 
   .location-text-bg {
     position: absolute;
@@ -32,5 +33,12 @@
     z-index: 2;
     padding-left: 8px;
     padding-right: 8px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .locationCard-container {
+    width: 290px;
+    height: 240px;
   }
 }
