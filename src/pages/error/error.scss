@@ -26,3 +26,20 @@
     text-decoration: underline;
   }
 }
+
+@media (max-width: 1024px) {
+  .error-page {
+    gap: 80px;
+    .error-title {
+      font-size: 6rem;
+    }
+    .error-message {
+      font-size: 1rem;
+      width: 70%;
+      margin: 0;
+    }
+    .error-link {
+      font-size: 1rem;
+    }
+  }
+}

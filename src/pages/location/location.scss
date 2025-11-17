@@ -125,6 +125,8 @@
 
       .location-host {
         flex-direction: row-reverse;
+        width: 100%;
+        justify-content: space-between;
 
         .location-host-info {
           .host-img {
@@ -133,6 +135,7 @@
         }
 
         .location-stars {
+          margin-top: 0;
           img {
             width: 25px;
             height: 25px;
@@ -144,6 +147,7 @@
     .location-dropdowns {
       flex-direction: column;
       width: 100%;
+      gap: 20px;
 
       .dropdown-container {
         width: 100%;

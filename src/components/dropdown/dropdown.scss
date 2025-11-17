@@ -6,7 +6,6 @@
   display: flex;
   width: 70%;
   margin: auto;
-  padding: 1rem;
   justify-content: space-between;
   background-color: #ff6060;
   font-weight: 600;
@@ -47,4 +46,14 @@
 
 .chevron-icon.open {
   transform: rotate(180deg);
+}
+
+@media (max-width: 1024px) {
+  .dropdown-title {
+    width: 90%;
+  }
+
+  .dropdown-description {
+    width: 90%;
+  }
 }
