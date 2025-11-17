@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom"; // Ajout de useNavigate
 import axios from "axios";
 import Nav from "../../components/navigation/navigation";
 import Tag from "../../components/tag/tag";
@@ -26,19 +26,30 @@ interface Property {
 
 const Location: React.FC = () => {
   const { id } = useParams();
+  const navigate = useNavigate(); // Ajout du hook
   const [property, setProperty] = useState<Property | null>(null);
+  const [notFound, setNotFound] = useState(false); // Ajout de l'état
 
   useEffect(() => {
     axios
       .get(`http://localhost:8080/api/properties/${id}`)
       .then((response) => {
-        console.log("API property:", response.data);
-        setProperty(response.data);
+        if (!response.data || Object.keys(response.data).length === 0) {
+          setNotFound(true);
+        } else {
+          setProperty(response.data);
+        }
       })
-      .catch((error) => console.error(error));
+      .catch(() => setNotFound(true)); // En cas d'erreur, on passe à notFound
   }, [id]);
 
-  if (!property) {
+  useEffect(() => {
+    if (notFound) {
+      navigate("/404", { replace: true }); // Redirection vers la page 404
+    }
+  }, [notFound, navigate]);
+
+  if (!property && !notFound) {
     return <div>Chargement...</div>;
   }
 
@@ -46,47 +57,54 @@ const Location: React.FC = () => {
     <>
       <Nav />
       <div className="location-page">
-        <Slider pictures={property.pictures} />
-        <div className="location-info">
-          <div className="location-details">
-            <p className="location-title">{property.title}</p>
-            <p className="location-city">{property.location}</p>
-            <div className="location-tags">
-              {property.tags.map((tag, idx) => (
-                <Tag key={idx}>{tag}</Tag>
-              ))}
-            </div>
-          </div>
-          <div className="location-host">
-            <div className="location-host-info">
-              <div className="host-name">
-                <p>{property.host.name}</p>
+        {property && (
+          <>
+            <Slider pictures={property.pictures} />
+            <div className="location-info">
+              <div className="location-details">
+                <p className="location-title">{property.title}</p>
+                <p className="location-city">{property.location}</p>
+                <div className="location-tags">
+                  {property.tags.map((tag, idx) => (
+                    <Tag key={idx}>{tag}</Tag>
+                  ))}
+                </div>
               </div>
-              <img
-                src={property.host.picture}
-                alt="hostImg"
-                className="host-img"
+              <div className="location-host">
+                <div className="location-host-info">
+                  <div className="host-name">
+                    <p>{property.host.name}</p>
+                  </div>
+                  <img
+                    src={property.host.picture}
+                    alt="hostImg"
+                    className="host-img"
+                  />
+                </div>
+                <div className="location-stars">
+                  {[...Array(5)].map((_, i) => (
+                    <img
+                      key={i}
+                      src={
+                        i < property.rating
+                          ? "/src/assets/star-active.png"
+                          : "/src/assets/star-inactive.png"
+                      }
+                      alt={i < property.rating ? "starActive" : "starInactive"}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className="location-dropdowns">
+              <Dropdown
+                title="Description"
+                description={property.description}
               />
+              <Dropdown title="Équipements" description={property.equipments} />
             </div>
-            <div className="location-stars">
-              {[...Array(5)].map((_, i) => (
-                <img
-                  key={i}
-                  src={
-                    i < property.rating
-                      ? "/src/assets/star-active.png"
-                      : "/src/assets/star-inactive.png"
-                  }
-                  alt={i < property.rating ? "starActive" : "starInactive"}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-        <div className="location-dropdowns">
-          <Dropdown title="Description" description={property.description} />
-          <Dropdown title="Équipements" description={property.equipments} />
-        </div>
+          </>
+        )}
       </div>
       <Footer />
     </>

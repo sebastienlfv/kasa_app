@@ -1,15 +1,15 @@
 .locationCard-container {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; // éléments en bas
-  align-items: flex-start; // éléments à gauche
+  justify-content: flex-end;
+  align-items: flex-start;
   padding: 20px;
-  background-color: gray;
+  background-color: rgb(185, 179, 179);
   border-radius: 10px;
-  width: 340px;
-  height: 250px;
+  width: 310px;
+  height: 310px;
   cursor: pointer;
-  position: relative; // nécessaire pour le positionnement absolu
+  position: relative;
   background-color: orangered;
 
   .location-text-bg {
